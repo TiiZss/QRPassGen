@@ -2,6 +2,7 @@
 
 ![Static Badge](https://img.shields.io/badge/TiiZss-BullSec-blue)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?business=AC5N3XX2KGY2S&no_recurring=0&item_name=Seguir+con+el+desarrollo+de+la+herramienta&currency_code=EUR)
+
 ![GitHub License](https://img.shields.io/github/license/TiiZss/QRPassGen)
 <img src="https://img.shields.io/github/deployments/TiiZss/QRPassGen/github-pages?label=deployment"> 
 <img src="https://img.shields.io/github/v/release/TiiZss/QRPassGen?label=version"> 
