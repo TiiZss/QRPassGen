@@ -1,0 +1,366 @@
+:root {
+    --primary-color: #0c65aa;
+    --secondary-color: #e0001b;
+    --gray-color: #aaaaaa;
+    --box-color: rgba(255,255,255,0.9);
+}
+
+html, body {
+    box-sizing: border-box;
+    height: 100%; /* Importante para que el disclaimer ocupe toda la pantalla */
+    padding: 0;
+    margin: 0;
+    overflow: hidden; /* Evita que el scroll del body interfiera con el disclaimer */
+}
+
+
+body {
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background: #000;
+    color: #fff;
+    display: flex; /* Para el header */
+    flex-direction: column;
+}
+
+.wrapper {
+    flex: 1; /* Para que el wrapper ocupe el espacio disponible */
+    display: none; /* Oculto inicialmente */
+    justify-content: center; /* Centrar contenido verticalmente */
+    align-items: center; /* Centrar contenido horizontalmente */
+}
+
+main {
+	max-width:500px;
+	padding:10px;
+	margin: 0 auto;
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1001; /* header por encima del disclaimer */
+}
+
+footer, .push {
+	height: 30px;
+}
+
+header, footer {
+	position:relative;
+	overflow:hidden;
+	padding:10px;
+	box-sizing: border-box;
+}
+
+a {
+    color: #eee; /* Gris claro */
+    text-decoration: none; 
+}
+
+h1 {
+    color: var(--secondary-color); /* Puedes mantener el color secundario o elegir otro */
+    font-weight:400;
+    margin:0;
+    /*float:left;*/
+	text-align: center;
+}
+
+h2 {
+	margin-top:0px;
+	text-transform:uppercase;
+	font-size:1.1em;
+	color: var(--primary-color);
+}
+
+h1 span {
+	color: var(--primary-color);
+	font-style:italic;
+}
+
+/*.menu {
+	list-style: none;
+	padding:0;
+	margin:0;
+	display:inline-block;
+	text-decoration: none;
+	position:absolute;
+	right:10px;
+	top:15px;
+	font-size:160%;
+}*/
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Usa flexbox para el menú */
+    justify-content: center; /* Distribuye los elementos equitativamente */
+    position: relative; /* Elimina la posición absoluta */
+    width: 100%; /* El menú ocupa todo el ancho */
+    top: 0; /* Ajusta la posición vertical si es necesario */
+    font-size: 1.2em; /* Tamaño de fuente más grande */
+}
+
+.menu > li {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.menu li > * {
+	cursor: pointer;
+	vertical-align: middle;;
+}
+
+#copyright {
+	width:100%;
+	text-align: center;
+	font-size:0.8em;
+	text-transform: uppercase;
+	color: var(--gray-color)
+}
+
+.hide {
+	display:none;	
+}
+
+.column {
+	float: left;
+	width: 48%;
+	height: 65px;
+	margin-right:2%;
+	overflow:hidden;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.modal-window label {
+	text-transform:uppercase;
+	color:var(--gray-color);
+	font-size:90%;
+	white-space: nowrap;
+}
+
+input, select {
+	width:100%;
+	-webkit-appearance: none;
+	-webkit-border-radius: none;
+	padding:5px;
+	height:27px;
+	font-size:120%;
+	margin-bottom:10px;
+	font-family: monospace;
+	background:var(--bg-color);
+	border:0;
+	border-bottom:2px solid var(--gray-color);
+	border-radius:0;
+}
+
+input {
+	max-height:15px;
+}
+
+#errMsg {
+	text-align: center;
+	margin-bottom: 8px;
+	color: var(--secondary-color);
+	text-align: center;
+	width: 100%;
+	border-radius:5px;
+	box-sizing: border-box;
+	padding: 4px;
+	border: var(--secondary-color) solid 2px;
+	display:none;
+}
+
+#theimg, #theimg2, #theimg3, #barcode {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.qrcode {
+	padding:10px;
+	letter-spacing: 1px;
+	background:var(--box-color);
+	opacity: 0.4;
+	border-radius:8px;
+	font-family: monospace;
+	color:var(--gray-color);
+	text-align:center;
+	width:100%;
+	box-sizing:border-box;
+}
+
+.modal-window {
+	position: fixed;
+	background-color: #1a1a1a; /* Gris oscuro o negro */
+    color: #eee; /* Gris claro o blanco */
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s;
+}
+.modal-window:target {
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+}
+.modal-window .foreground {
+	width: 90%;
+	position: absolute;
+	top: 50%;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(3px);
+	left: 50%;
+	background: rgba(255,255,255,0.95);
+	transform: translate(-50%, -50%);
+	padding: 1em;
+	box-sizing: border-box;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.modal-close {
+	color: var(--gray-color);
+	font-size: 80%;
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	top: 10px;
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12z'/%3E%3C/svg%3E"); /* fill cambiado a black */
+    background-repeat: no-repeat;
+    background-size: contain; /* Para asegurar que el icono se escale correctamente */
+    width: 24px; /* Ajusta el tamaño del icono si es necesario */
+    height: 24px; /* Ajusta el tamaño del icono si es necesario */
+}
+.modal-close:hover {
+	color: var(--font-color);
+}
+
+input[type="file"] {
+	display: none;
+}
+
+/* ICONS https://fontawesome.com/search */
+
+.mdi--bookmark-plus {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M17 3a2 2 0 0 1 2 2v16l-7-3l-7 3V5a2 2 0 0 1 2-2zm-6 4v2H9v2h2v2h2v-2h2V9h-2V7z'/%3E%3C/svg%3E");
+}
+
+.mdi--qrcode-edit {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M5 5h2v2H5zM1 1h10v10H1zm2 2v6h6V3zm2 14h2v2H5zm-4-4h10v10H1zm2 2v6h6v-6zm10-2h4v2h2v-2h4v2h-4v2h4v6h-4v-2h-4v2h-2v-2h2v-2h-2zm8 8v-2h-2v2zm-2-4h-2v-2h-2v4h4zm3.7-13.65l-1 1l-2.05-2l1-1c.2-.21.54-.22.77 0l1.28 1.23c.21.2.22.54 0 .77M13 8.94l6.07-6.06l2.05 2.05L15.06 11H13z'/%3E%3C/svg%3E");
+}
+
+.mdi--edit {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z'/%3E%3C/svg%3E");
+}
+
+.mdi--qrcode-plus {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M5 5h2v2H5zM1 1h10v10H1zm2 2v6h6V3zm2 14h2v2H5zm-4-4h10v10H1zm2 2v6h6v-6zm10-2h4v2h2v-2h4v2h-4v2h4v6h-4v-2h-4v2h-2v-2h2v-2h-2zm8 8v-2h-2v2zm-2-4h-2v-2h-2v4h4zM17 2v3h-3v2h3v3h2V7h3V5h-3V2Z'/%3E%3C/svg%3E");
+}
+
+.mdi--close-thick {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12z'/%3E%3C/svg%3E");
+}
+
+.mdi--refresh {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M105.1 202.6c7.7-21.8 20.2-42.3 37.8-59.8c62.5-62.5 163.8-62.5 226.3 0L386.3 160 352 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l111.5 0c0 0 0 0 0 0l.4 0c17.7 0 32-14.3 32-32l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 35.2L414.4 97.6c-87.5-87.5-229.3-87.5-316.8 0C73.2 122 55.6 150.7 44.8 181.4c-5.9 16.7 2.9 34.9 19.5 40.8s34.9-2.9 40.8-19.5zM39 289.3c-5 1.5-9.8 4.2-13.7 8.2c-4 4-6.7 8.8-8.1 14c-.3 1.2-.6 2.5-.8 3.8c-.3 1.7-.4 3.4-.4 5.1L16 432c0 17.7 14.3 32 32 32s32-14.3 32-32l0-35.1 17.6 17.5c0 0 0 0 0 0c87.5 87.4 229.3 87.4 316.7 0c24.4-24.4 42.1-53.1 52.9-83.8c5.9-16.7-2.9-34.9-19.5-40.8s-34.9 2.9-40.8 19.5c-7.7 21.8-20.2 42.3-37.8 59.8c-62.5 62.5-163.8 62.5-226.3 0l-.1-.1L125.6 352l34.4 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L48.4 288c-1.6 0-3.2 .1-4.8 .3s-3.1 .5-4.6 1z'/%3E%3C/svg%3E");
+}
+
+/*
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M96 224l0 32 0 160c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-88.2c9.9 6.6 20.6 12 32 16.1l0 24.2c0 8.8 7.2 16 16 16s16-7.2 16-16l0-16.9c5.3 .6 10.6 .9 16 .9s10.7-.3 16-.9l0 16.9c0 8.8 7.2 16 16 16s16-7.2 16-16l0-24.2c11.4-4 22.1-9.4 32-16.1l0 88.2c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-160 32 32 0 49.5c0 9.5 2.8 18.7 8.1 26.6L530 427c8.8 13.1 23.5 21 39.3 21c22.5 0 41.9-15.9 46.3-38l20.3-101.6c2.6-13-.3-26.5-8-37.3l-3.9-5.5 0-81.6c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 14.4-52.9-74.1C496 86.5 452.4 64 405.9 64L272 64l-16 0-64 0-48 0C77.7 64 24 117.7 24 184l0 54C9.4 249.8 0 267.8 0 288l0 17.6c0 8 6.4 14.4 14.4 14.4C46.2 320 72 294.2 72 262.4l0-6.4 0-32 0-40c0-24.3 12.1-45.8 30.5-58.9C98.3 135.9 96 147.7 96 160l0 64zM560 336a16 16 0 1 1 32 0 16 16 0 1 1 -32 0zM166.6 166.6c-4.2-4.2-6.6-10-6.6-16c0-12.5 10.1-22.6 22.6-22.6l178.7 0c12.5 0 22.6 10.1 22.6 22.6c0 6-2.4 11.8-6.6 16l-23.4 23.4C332.2 211.8 302.7 224 272 224s-60.2-12.2-81.9-33.9l-23.4-23.4z"/></svg> 
+*/
+.mdi--cow {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M96 224l0 32 0 160c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-88.2c9.9 6.6 20.6 12 32 16.1l0 24.2c0 8.8 7.2 16 16 16s16-7.2 16-16l0-16.9c5.3 .6 10.6 .9 16 .9s10.7-.3 16-.9l0 16.9c0 8.8 7.2 16 16 16s16-7.2 16-16l0-24.2c11.4-4 22.1-9.4 32-16.1l0 88.2c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-160 32 32 0 49.5c0 9.5 2.8 18.7 8.1 26.6L530 427c8.8 13.1 23.5 21 39.3 21c22.5 0 41.9-15.9 46.3-38l20.3-101.6c2.6-13-.3-26.5-8-37.3l-3.9-5.5 0-81.6c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 14.4-52.9-74.1C496 86.5 452.4 64 405.9 64L272 64l-16 0-64 0-48 0C77.7 64 24 117.7 24 184l0 54C9.4 249.8 0 267.8 0 288l0 17.6c0 8 6.4 14.4 14.4 14.4C46.2 320 72 294.2 72 262.4l0-6.4 0-32 0-40c0-24.3 12.1-45.8 30.5-58.9C98.3 135.9 96 147.7 96 160l0 64zM560 336a16 16 0 1 1 32 0 16 16 0 1 1 -32 0zM166.6 166.6c-4.2-4.2-6.6-10-6.6-16c0-12.5 10.1-22.6 22.6-22.6l178.7 0c12.5 0 22.6 10.1 22.6 22.6c0 6-2.4 11.8-6.6 16l-23.4 23.4C332.2 211.8 302.7 224 272 224s-60.2-12.2-81.9-33.9l-23.4-23.4z'/%3E%3C/svg%3E");
+}
+
+
+/* BOTON */
+button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 16px;
+	margin-top: 15px;
+}
+button:hover {
+	background-color: #45a049;
+}
+button:disabled {
+	background-color: #cccccc;
+	cursor: not-allowed;
+}
+
+/* DISCLAIMER */
+#disclaimer-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
+#disclaimer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+	color: black;
+    max-width: 600px; /* Para que no se vea demasiado ancho */
+}
