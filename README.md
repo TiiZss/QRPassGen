@@ -18,7 +18,7 @@ Existen dos estándares que utilizan las aerolíneas para poder leer la informac
 Los datos de las tarjetas de embarque, por tanto se codifican según un [estándar específico de la IATA](https://www.iata.org/contentassets/1dccc9ed041b4f3bbdcf8ee8682e75c4/2021_03_02-bcbp-implementation-guide-version-7-.pdf) en uno de estos 2 formatos siguiedo un determinado formato, por ejemplo: Benito Camela que tiene como localizador RC2025 se vería así:
 
 ```
-M1CAMELA/BENITO ERC2025 MAD ... 203A010F0001 100
+M1CAMELA/BENITO ERC2025 MAD... 203A010F0001 100
   ------ ------  ------
      |     |       |
  Apellido  | Localizazor  ...
