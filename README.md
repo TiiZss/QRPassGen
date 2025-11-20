@@ -8,10 +8,10 @@
 ![Static Badge](https://img.shields.io/badge/TiiZss-BullSec-blue)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?business=AC5N3XX2KGY2S&no_recurring=0&item_name=Seguir+con+el+desarrollo+de+la+herramienta&currency_code=EUR)
 
-## Introducción y funcionaiento
+## Introducción y funcionamiento
 
 Existen dos estándares que utilizan las aerolíneas para poder leer la informacion de una tarjeta de embarque de manera mecanizada: 
-* PDF417 - Código de barrar 1D
+* PDF417 - Código de barras 1D
 * AZTEC - Código QR 2D
 
 Los datos de las tarjetas de embarque, por tanto se codifican según un [estándar específico de la IATA](https://www.iata.org/contentassets/1dccc9ed041b4f3bbdcf8ee8682e75c4/2021_03_02-bcbp-implementation-guide-version-7-.pdf) en uno de estos 2 formatos siguiedo un determinado formato, por ejemplo: Benito Camela que tiene como localizador RC2025 se vería así:
@@ -41,7 +41,7 @@ El contenido además es texto sin procesar, en claro, sin cifrar y por tanto pue
 * [Barcode Writer in JS](https://github.com/metafloor/bwip-js)
   
 # Descargo de responsabilidad
-En este sitio web se demuestra una vulnerabilidad de seguridad conocida, pero no divulgada públicamente. La herramienta utilizada para esta demostración ha sido desarrollada exclusivamente con fines educativos y de concienciación sobre los riesgos de seguridad informática.
+En este sitio web se demuestra una vulnerabilidad de seguridad conocida y [divulgada públicamente] (https://www.youtube.com/watch?v=CHPdxyJ_ooQ). La herramienta utilizada para esta demostración ha sido desarrollada exclusivamente con fines educativos y de concienciación sobre los riesgos de seguridad informática.
 
 El propietario y los colaboradores de este sitio web no se hacen responsables del uso que terceros puedan dar a esta información y herramienta. La explotación de vulnerabilidades de seguridad sin el consentimiento del propietario del sistema afectado es ilegal y puede acarrear consecuencias legales.
 
