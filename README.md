@@ -41,7 +41,7 @@ El contenido además es texto sin procesar, en claro, sin cifrar y por tanto pue
 * [Barcode Writer in JS](https://github.com/metafloor/bwip-js)
   
 # Descargo de responsabilidad
-En este sitio web se demuestra una vulnerabilidad de seguridad conocida y [divulgada públicamente] (https://www.youtube.com/watch?v=CHPdxyJ_ooQ). La herramienta utilizada para esta demostración ha sido desarrollada exclusivamente con fines educativos y de concienciación sobre los riesgos de seguridad informática.
+En este sitio web se demuestra una vulnerabilidad de seguridad conocida y [divulgada públicamente](https://www.youtube.com/watch?v=CHPdxyJ_ooQ). La herramienta utilizada para esta demostración ha sido desarrollada exclusivamente con fines educativos y de concienciación sobre los riesgos de seguridad informática.
 
 El propietario y los colaboradores de este sitio web no se hacen responsables del uso que terceros puedan dar a esta información y herramienta. La explotación de vulnerabilidades de seguridad sin el consentimiento del propietario del sistema afectado es ilegal y puede acarrear consecuencias legales.
 
